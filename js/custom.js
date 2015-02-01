@@ -53,6 +53,7 @@ jQuery(document).ready(function ($){
 	$('#inner').on('mouseenter mouseleave', function(e){
     var $faceCont = $('#face_cont');
 		var $mouth = $('#mouth');
+		var $face = $('#face');
 		var t = 0;
 		var face_offset = $face.offset();
 		var mouth_offset = $mouth.position();
