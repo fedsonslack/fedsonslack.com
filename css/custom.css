@@ -1,0 +1,126 @@
+body {
+	font-size: 18px;
+	font-weight: 300;
+}
+
+@media (max-width: 768px) {
+	a[href="#team"] {
+		display: none;
+	}
+	.mobile-margin5 {
+		margin-top: 5%;
+	}
+	.mobile-margin-5 {
+		margin-bottom: 5%;
+	}
+}
+
+strong {
+	font-weight: 400;
+}
+
+#preloader {
+	display: none;
+	/*background-color: white;*/
+}
+
+.backstretch {
+	background-color: #1E171D;
+}
+
+#status {
+	background-image: none;
+	text-align: center;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	-o-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+#status span {
+	font-size: 14px;
+}
+
+.logo {
+	margin-left: 2px;
+}
+
+.intro-image {
+	max-width: 150px;
+	margin: 0 auto;
+}
+
+#home {
+	background: url("../img/bg_dark_glitter_low.jpg");
+	background-size: cover;
+}
+
+#home h1 {
+	/*color: #443642;*/
+}
+
+.btn {
+	/*color: #443642;*/
+}
+
+.btn-primary {
+	background: #E21565;
+}
+.btn-primary:hover, .btn-primary:active {
+	background: #E21565;
+	color: black;
+}
+
+span {
+	color: inherit;
+}
+
+mark {
+	background: transparent;
+	color: #E21565;
+	font-weight: 400;
+}
+
+h2 mark {
+	font-weight: inherit;
+}
+
+.team-image-wrapper {
+	display: inline-block;
+	margin: 0 50px;
+	position: relative;
+}
+
+.team-image-wrapper a {
+	font-size: 0.75em;
+	color: #55ACEE;
+}
+
+.team-image {
+	width: 200px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 25px 0;
+	transition: -webkit-transform 0.3s;
+	transition: -moz-transform 0.3s;
+	transition: -ms-transform 0.3s;
+	transition: -o-transform 0.3s;
+	transition: transform 0.3s;
+	transition-delay: 0.3s;
+}
+
+.social-links a {
+	color: white;
+}
+
+.no-script-apply-link {
+	line-height: 400px;
+}
+
+#be-nice {
+	background: #25272B;
+}
+	#be-nice, #be-nice h2, #be-nice p {
+		color: #f5f5f5;
+	}
