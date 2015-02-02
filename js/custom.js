@@ -1,6 +1,15 @@
 $(document).ready(function() {
 	'use strict';
 
+	if ($('.no-touch').length) {
+		setTimeout(function(){
+			skrollr.init({
+				easing: 'sqrt',
+				smoothScrolling: true,
+				forceHeight: false
+			});
+		},1000);
+	}
 
 	$('.intro').textillate({
 		loop: true,
