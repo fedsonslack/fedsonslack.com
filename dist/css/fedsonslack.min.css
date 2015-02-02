@@ -1146,7 +1146,7 @@ textarea.input-lg{height:auto}
 .form-horizontal .form-group:after{clear:both}
 .form-horizontal .form-control-static{padding-top:7px}
 @media(min-width:768px){.form-horizontal .control-label{text-align:right}}
-.btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.428571429;text-align:center;white-space:nowrap;vertical-align:middle;cursor:pointer;background-image:none;border:1px solid transparent;border-radius:4px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none}
+.btn{display:inline-block;margin-bottom:0;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;cursor:pointer;background-image:none;border:1px solid transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none}
 .btn:focus{outline:#333 dotted thin;outline:-webkit-focus-ring-color auto 5px;outline-offset:-2px}
 .btn:focus,.btn:hover{color:#333;text-decoration:none}
 .btn.active,.btn:active{background-image:none;outline:0;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}
@@ -2108,7 +2108,10 @@ strong{font-weight:400}
 #status span{font-size:14px}
 .logo{margin-left:2px}
 .intro-image{max-width:150px;margin:0 auto}
-#home{background:url(/img/bg_dark_glitter_low.jpg);background-size:cover}
+#home,#join{background:url(/img/bg_dark_glitter_low.jpg);background-size:cover}
+#join h3{color:#fff}
+#join .btn{font-size:30px;padding:20px 30px;line-height:30px;border-radius:5px;margin:0}
+.btn{line-height:50px;border-radius:3px;padding:0 20px;font-size:16px;box-shadow:0 2px 0 0 rgba(0,0,0,.1),inset 0 1px 0 0 rgba(255,255,255,.25)}
 .btn-primary{background:#E21565}
 .btn-primary:active,.btn-primary:hover{background:#E21565;color:#000}
 span{color:inherit}

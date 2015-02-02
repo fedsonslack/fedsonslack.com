@@ -193,15 +193,28 @@ strong {
   max-width: 150px;
   margin: 0 auto; }
 
-#home {
+#home, #join {
   background: url("/img/bg_dark_glitter_low.jpg");
   background-size: cover; }
 
 #home h1 {
   /*color: #443642;*/ }
 
+#join h3 {
+  color: white; }
+#join .btn {
+  font-size: 30px;
+  padding: 20px 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  margin: 0; }
+
 .btn {
-  /*color: #443642;*/ }
+  line-height: 50px;
+  border-radius: 3px;
+  padding: 0 20px;
+  font-size: 16px;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.25); }
 
 .btn-primary {
   background: #E21565; }
