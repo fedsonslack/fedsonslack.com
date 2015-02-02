@@ -52,7 +52,7 @@ strong {
 }
 
 #home {
-	background: url("../img/bg_dark_glitter_low.jpg");
+	background: url("/img/bg_dark_glitter_low.jpg");
 	background-size: cover;
 }
 

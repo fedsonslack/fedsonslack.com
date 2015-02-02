@@ -2,6 +2,9 @@ var gulp        = require('gulp'),
     order       = require('gulp-order'),
     concat      = require('gulp-concat'),
     uglify      = require('gulp-uglify'),
+    minifyCSS = require('gulp-minify-css'),
+    serve      = require('gulp-serve'),
+    liveReload  = require('gulp-livereload'),
     rename      = require('gulp-rename');
 
 gulp.task('uglify', function() {
@@ -15,7 +18,33 @@ gulp.task('uglify', function() {
         .pipe(rename({
             extname: ".min.js"
          }))
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('dist/js'))
+        .pipe(liveReload());
+});
+gulp.task('minify-css', function(){
+    return gulp.src('css/**/*.css')
+        .pipe(concat('fedsonslack'))
+        .pipe(minifyCSS({keepBreaks:true}))
+        .pipe(rename({
+            extname: ".min.css"
+         }))
+        .pipe(gulp.dest('dist/css'))
+        .pipe(liveReload())
+})
+gulp.task('serve', serve({
+    root: [__dirname],
+    port: 3000
+}));
+
+gulp.task('watch', function() {
+    liveReload.listen({start:true});
+
+    gulp.watch('css/**/*.css' , ['minify-css']);
+    gulp.watch('js/**/*.js',  ['uglify']);
+    gulp.watch('index.html', liveReload)
+
+
 });
 
 gulp.task('build', ['uglify']);
+gulp.task('default', ['minify-css','uglify', 'watch', 'serve']);
