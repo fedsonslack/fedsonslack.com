@@ -13,7 +13,7 @@ gulp.task('uglify', function() {
     return gulp.src(['js/**/*.js'])
       .pipe(order([
         "vendor/*.js",
-        "custom.js"
+        "*.js"
       ]))
         .pipe(concat('fedsonslack'))
         .pipe(uglify())

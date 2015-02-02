@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $.ajax({
     type: "GET",
-    url: "http://fedsonslack.com/slack_api.php?method=users.list"
+    url: "http://fedsonslack.com/scripts/slack_api.php?method=users.list"
   })
     .done(function( data ) {
       var $members = $("#members");

@@ -2102,7 +2102,7 @@ body{font-size:18px;font-weight:300}
 .mobile-margin5{margin-top:5%}
 .mobile-margin-5{margin-bottom:5%}}
 strong{font-weight:400}
-#preloader{display:none}
+#member-count-part,#preloader{display:none}
 .backstretch{background-color:#1E171D}
 #status{background-image:none;text-align:center;-webkit-animation-iteration-count:infinite;-ms-animation-iteration-count:infinite;animation-iteration-count:infinite}
 #status span{font-size:14px}

@@ -48,7 +48,7 @@ $(window).load(function() {
 
   $.ajax({
     type: "GET",
-    url: "http://fedsonslack.com/slack_api.php?method=users.count"
+    url: "http://fedsonslack.com/scripts/slack_api.php?method=users.count"
   })
     .done(function( data ) {
       var $memberCountPart = $("#member-count-part");
