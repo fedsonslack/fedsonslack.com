@@ -46,6 +46,16 @@ $(document).ready(function() {
 
 $(window).load(function() {
   $('#integrations_gif').attr('src', 'img/integrations.gif');
+
+  $.ajax({
+    type: "GET",
+    url: "http://fedsonslack.com/slack_api.php?method=users.count"
+  })
+    .done(function( data ) {
+      var $memberCountPart = $("#member-count-part");
+      $memberCountPart.find("mark").text(data.count + " FEDs");
+      $memberCountPart.show();
+    });
 });
 
 //alex-vs-mouse

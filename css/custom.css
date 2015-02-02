@@ -24,6 +24,10 @@ strong {
 	/*background-color: white;*/
 }
 
+#member-count-part {
+    display: none;
+}
+
 .backstretch {
 	background-color: #1E171D;
 }
