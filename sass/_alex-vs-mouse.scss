@@ -1,10 +1,3 @@
-/*body {
-  background: #e2e2e2;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  height: 100%; }*/
-
 #container {
   width: 250px;
   height: 250px;
@@ -15,9 +8,7 @@
   border-radius: 50%;
   overflow: hidden;
   transform: scale(0.8);
-  transform-origin: 50% 50%; 
-  -webkit-transform: scale(0.8);
-  -webkit-transform-origin: 50% 50%; 
+  transform-origin: 50% 50%;
 }
 
 #inner:hover {
@@ -26,7 +17,7 @@
 #inner {
   width: 100%;
   height: 100%;
-  background: url("http://alexw.me/playground/partsuf/css/../img/backdrop.jpg") no-repeat;
+  background: url("/img/backdrop.jpg") no-repeat;
   position: relative;
   border-radius: 50%;
   overflow: hidden;
@@ -35,7 +26,7 @@
 #shadow {
   width: 100%;
   height: 100%;
-  background: url("http://alexw.me/playground/partsuf/css/../img/shadow.png") no-repeat;
+  background: url("/img/shadow.png") no-repeat;
   z-index: 15;
   position: relative;
   border-radius: 50%;
