@@ -1,15 +1,6 @@
 $(document).ready(function() {
 	'use strict';
 
-	if ($('.no-touch').length) {
-		setTimeout(function(){
-			skrollr.init({
-				easing: 'sqrt',
-				smoothScrolling: true,
-				forceHeight: false
-			});
-		},1000);
-	}
 
 	$('.intro').textillate({
 		loop: true,
@@ -22,7 +13,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$('#features .col-lg-6 a, #features .col-lg-8 a, a.go-top')
+    $('a[href^="#"], .go-top')
 		.bind('click', function(event) {
 			var $anchor = $(this),
 			scrollVal = $($anchor.attr('href')).offset().top +1
@@ -32,8 +23,7 @@ $(document).ready(function() {
 			}
 
 			$.scrollTo(scrollVal, {
-			  easing: 'easeInOutExpo',
-			  duration: 1500
+			  duration: 800
 			});
 
 			event.preventDefault();
