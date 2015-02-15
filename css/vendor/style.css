@@ -426,18 +426,18 @@ form .btn:focus {
 	margin: -100px 0 0 -100px;
 }
 
-.go-top {
-	position: fixed;
-	bottom: 1em;
-	right: 1em;
-	text-decoration: none;
-	color: #fff;
-	background: rgba(0, 0, 0, 0.3);
-	font-size: 13px;
-	padding: 1em;
-}
+/*.go-top {*/
+	/*position: fixed;*/
+	/*bottom: 1em;*/
+	/*right: 1em;*/
+	/*text-decoration: none;*/
+	/*color: #fff;*/
+	/*background: rgba(0, 0, 0, 0.3);*/
+	/*font-size: 13px;*/
+	/*padding: 1em;*/
+/*}*/
 
-.go-top:hover {
-	background: rgba(0, 0, 0, 0.4);
-	color: #fff;
-}
+/*.go-top:hover {*/
+	/*background: rgba(0, 0, 0, 0.4);*/
+	/*color: #fff;*/
+/*}*/

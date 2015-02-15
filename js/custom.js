@@ -41,10 +41,27 @@ $(document).ready(function() {
 	$('a[href="#"]').click(function() {
 		return false;
 	});
+
+  //$(".floating-menu").on("click", function() {
+  //  $(this).toggleClass("open");
+  //});
 });
 
 $(window).load(function() {
   $('#integrations_gif').attr('src', 'img/integrations.gif');
+
+  $.ajax({
+    type: "GET",
+    url: "http://fedsonslack.com/scripts/slack_api.php?method=users.count"
+  })
+    .done(function( data ) {
+      var $memberCountPart = $("#member-count-part");
+      $memberCountPart.find("mark").text(data.count + " FEDs");
+      $memberCountPart.show();
+    })
+    .fail(function( jqXHR, textStatus, errorThrown ) {
+      console.log(jqXHR, textStatus, errorThrown);
+    });
 });
 
 //alex-vs-mouse
