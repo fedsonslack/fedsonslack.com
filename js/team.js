@@ -1,5 +1,29 @@
 var map;
 
+var renderMemberTemplate = function(member_obj) {
+  var extra_info = "";
+  var title = "";
+
+  if ((member_obj.is_owner) || (member_obj.is_admin)) {
+    if (member_obj.is_owner) {
+      title = "Owner";
+    } else if (member_obj.is_admin) {
+      title = "Admin";
+    }
+
+    extra_info += '<div class="mark_alt"><i class="fa fa-trophy"></i> Community ' + title + '</div>';
+  }
+
+  return '<figure class="team-image-wrapper">' +
+          '<img src="' + member_obj.image_192 + '" class="team-image" alt="' + member_obj.real_name + '">' +
+          '<figcaption>' +
+          '<mark>' + (member_obj.real_name || "&nbsp;") + '</mark><br />' +
+          extra_info +
+          '<div class="team-member-title">' + (member_obj.title || "&nbsp;") + '</div>' +
+          '</figcaption>' +
+          '</figure>';
+};
+
 $(document).ready(function() {
   L.mapbox.accessToken = 'pk.eyJ1Ijoia2luZG9mb25lIiwiYSI6IkVBYnRxeEkifQ.6VOX9JCTTCSMysIhJyqNLA';
   map = L.mapbox.map('map', 'kindofone.57c8f810', {
@@ -26,37 +50,18 @@ $(document).ready(function() {
       for (var i = 0; i < data.length; i++) {
         var member_obj = data[i];
 
-        // filter out members with no name
-        if ((member_obj.real_name != "") && (!member_obj.is_admin)) {
-          members_html += '<figure class="team-image-wrapper">' +
-          '<img src="' + member_obj.image_192 + '" class="team-image" alt="' + member_obj.real_name + '">' +
-          '<figcaption>' +
-          '<mark>' + (member_obj.real_name || "&nbsp;") + '</mark><br />' +
-          (member_obj.title || "&nbsp;") +
-          '</figcaption>' +
-          '</figure>';
-        }
+        if ((member_obj.real_name != "") && (member_obj.title != "") && (member_obj.title != null)) {
+          if (!member_obj.is_admin) {
+            members_html += renderMemberTemplate(member_obj);
+          }
 
-        if ((member_obj.real_name != "") && (member_obj.is_owner)) {
-          owners_html += '<figure class="team-image-wrapper">' +
-          '<img src="' + member_obj.image_192 + '" class="team-image" alt="' + member_obj.real_name + '">' +
-          '<figcaption>' +
-          '<mark>' + (member_obj.real_name || "&nbsp;") + '</mark><br />' +
-          '<div class="mark_alt"><i class="fa fa-trophy"></i> Community Owner</div>' +
-          (member_obj.title || "&nbsp;") +
-          '</figcaption>' +
-          '</figure>';
-        }
+          if (member_obj.is_owner) {
+            owners_html += renderMemberTemplate(member_obj);
+          }
 
-        if ((member_obj.real_name != "") && (!member_obj.is_owner) && (member_obj.is_admin)) {
-          admins_html += '<figure class="team-image-wrapper">' +
-          '<img src="' + member_obj.image_192 + '" class="team-image" alt="' + member_obj.real_name + '">' +
-          '<figcaption>' +
-          '<mark>' + (member_obj.real_name || "&nbsp;") + '</mark><br />' +
-          '<div class="mark_alt"><i class="fa fa-trophy"></i> Community Admin</div>' +
-          (member_obj.title || "&nbsp;") +
-          '</figcaption>' +
-          '</figure>';
+          if ((!member_obj.is_owner) && (member_obj.is_admin)) {
+            admins_html += renderMemberTemplate(member_obj);
+          }
         }
       }
 

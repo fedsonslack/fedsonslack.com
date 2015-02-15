@@ -265,6 +265,11 @@ h2 mark {
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s; }
 
+.team-member-title {
+  text-overflow: ellipsis;
+  height: 4em;
+  overflow: hidden; }
+
 .social-links a {
   color: white; }
 
