@@ -173,6 +173,9 @@ strong {
   display: none;
   /*background-color: white;*/ }
 
+#member-count-part {
+  display: none; }
+
 .backstretch {
   background-color: #1E171D; }
 
@@ -235,6 +238,9 @@ mark {
   color: #E21565;
   font-weight: 400; }
 
+.mark_alt {
+  color: #EAA823; }
+
 h2 mark {
   font-weight: inherit; }
 
@@ -277,3 +283,113 @@ h2 mark {
 .already-a-member-link:hover, .already-a-member-link:visited:hover {
   color: white;
   text-decoration: underline; }
+
+.floating-menu {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  background: url(/img/fos_icon.png) no-repeat;
+  background-size: 32px;
+  background-position: 50% 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  outline: none;
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+  -webkit-transition: background 150ms, box-shadow 150ms;
+          transition: background 150ms, box-shadow 150ms;
+  z-index: 100;
+  cursor: pointer; }
+  .floating-menu:hover, .floating-menu.open {
+    background-color: black;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.75); }
+  .floating-menu.open + .floating-menu-item-wrapper > .floating-menu-item {
+    opacity: 1; }
+    .floating-menu.open + .floating-menu-item-wrapper > .floating-menu-item:hover:after {
+      opacity: 1; }
+    .floating-menu.open + .floating-menu-item-wrapper > .floating-menu-item:nth-child(1) {
+      -webkit-transform: translateY(-50px);
+          -ms-transform: translateY(-50px);
+              transform: translateY(-50px);
+      z-index: 99; }
+      .floating-menu.open + .floating-menu-item-wrapper > .floating-menu-item:nth-child(1):after {
+        content: 'Go to top'; }
+    .floating-menu.open + .floating-menu-item-wrapper > .floating-menu-item:nth-child(2) {
+      -webkit-transform: translateY(-100px);
+          -ms-transform: translateY(-100px);
+              transform: translateY(-100px);
+      -webkit-transition-delay: 150ms;
+              transition-delay: 150ms;
+      z-index: 99; }
+      .floating-menu.open + .floating-menu-item-wrapper > .floating-menu-item:nth-child(2):after {
+        content: 'Share on Facebook'; }
+    .floating-menu.open + .floating-menu-item-wrapper > .floating-menu-item:nth-child(3) {
+      -webkit-transform: translateY(-150px);
+          -ms-transform: translateY(-150px);
+              transform: translateY(-150px);
+      -webkit-transition-delay: 300ms;
+              transition-delay: 300ms;
+      z-index: 98; }
+      .floating-menu.open + .floating-menu-item-wrapper > .floating-menu-item:nth-child(3):after {
+        content: 'Share on Twitter'; }
+
+.floating-menu-item-wrapper {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  width: 50px;
+  height: 50px;
+  z-index: 90;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px; }
+  .floating-menu-item-wrapper .floating-menu-item {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: black;
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform 250ms cubic-bezier(.12, .64, .81, 2.5), opacity 0ms 150ms;
+            transition: transform 250ms cubic-bezier(.12, .64, .81, 2.5), opacity 0ms 150ms;
+    opacity: 0;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    left: 5px;
+    box-shadow: 0 0 1px 0 #E21565;
+    cursor: pointer; }
+    .floating-menu-item-wrapper .floating-menu-item a {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%; }
+    .floating-menu-item-wrapper .floating-menu-item:after {
+      display: inline-block;
+      position: absolute;
+      font-size: 12px;
+      color: #FFF;
+      white-space: nowrap;
+      -webkit-transform: translateX(-100%) translateY(-50%) rotate(360deg);
+          -ms-transform: translateX(-100%) translateY(-50%) rotate(360deg);
+              transform: translateX(-100%) translateY(-50%) rotate(360deg);
+      left: -10px;
+      background: #000;
+      border-radius: 2px;
+      padding: 5px;
+      line-height: 14px;
+      top: 50%;
+      opacity: 0;
+      pointer-events: none;
+      -webkit-transition: opacity 150ms;
+              transition: opacity 150ms; }
+    .floating-menu-item-wrapper .floating-menu-item:hover {
+      background: #E21565; }
+    .floating-menu-item-wrapper .floating-menu-item a, .floating-menu-item-wrapper .floating-menu-item a:visited {
+      color: #E21565; }
+    .floating-menu-item-wrapper .floating-menu-item a:hover, .floating-menu-item-wrapper .floating-menu-item a:visited:hover {
+      color: #000000; }

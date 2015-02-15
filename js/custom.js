@@ -41,6 +41,10 @@ $(document).ready(function() {
 	$('a[href="#"]').click(function() {
 		return false;
 	});
+
+  //$(".floating-menu").on("click", function() {
+  //  $(this).toggleClass("open");
+  //});
 });
 
 $(window).load(function() {
@@ -54,6 +58,9 @@ $(window).load(function() {
       var $memberCountPart = $("#member-count-part");
       $memberCountPart.find("mark").text(data.count + " FEDs");
       $memberCountPart.show();
+    })
+    .fail(function( jqXHR, textStatus, errorThrown ) {
+      console.log(jqXHR, textStatus, errorThrown);
     });
 });
 
