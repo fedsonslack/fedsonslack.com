@@ -49,13 +49,14 @@
                 top: 0%;
                 left: 0;
             }
-            #admins, #members {
+            #admins, #members, #and-more {
                 opacity: 0;
                 transition: opacity 1s;
                 transition-delay: 1s;
             }
             .team-image-wrapper {
                 width: 20%;
+                height: 20%;
                 max-width: 200px;
                 margin: 10px 40px;
                 vertical-align: top;
@@ -73,6 +74,9 @@
                     overflow: hidden;
                     color: white;
                 }
+                .team-member-title {
+                    font-size: 16px;
+                }
             @media (max-width: 768px) {
                 .team-image-wrapper {
                     margin: 0px 2%;
@@ -81,6 +85,13 @@
                         display: none;
                     }
             }
+            .and-more {
+                text-align: center;
+                margin: 50px 0 100px 0;
+            }
+                .and-more h2, .and-more span {
+                    color: #FFF;
+                }
         </style>
 	</head>
 	<body>
@@ -105,12 +116,46 @@
                     <div id="admins" class="col-lg-12 col-md-12 col-sm-12 text-center">
 
                     </div>
-					<div id="members" class="col-lg-12 col-md-12 col-sm-12">
+					<div id="members" class="col-lg-12 col-md-12 col-sm-12 text-center">
 
 					</div>
+                    <div id="and-more" class="col-lg-12 col-md-12 col-sm-12 text-center">
+                        <h2>And more...</h2>
+                        <span>* Only team members with a Slack bio appear on the page.</span>
+                    </div>
 				</div>
 			</div>
 		</div>
+	<!-- start terms and privacy -->
+		<section id="join">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 margin10 margin-5 mobile-margin-5 text-center">
+                        <a href="/join" class="btn btn-primary btn-awesome margin5"><i class="fa fa-trophy fa-lg"></i>&nbsp;&nbsp;&nbsp;Sign Up Now</a>
+                        <br />
+                        <a class="already-a-member-link" href="https://feds.slack.com">Already a member?</a>
+                    </div>
+                </div>
+            </div>
+		</section>
+	<!-- end terms and privacy -->
+	<!-- start footer -->
+		<section class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4 margin5 margin-5">
+						<img src="/img/logo.png" alt="">
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 margin5 margin-5">
+						<p>We're building something special here.</p>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 margin5 margin-5 social-links">
+						<a href="https://www.twitter.com/fedsonslack" target="_blank"><i class="fa fa-twitter fa-lg"></i> Follow us</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- end footer -->
 
     <a href="/" class="hidden-sm hidden-xs floating-menu"></a>
     <!--<div class="hidden-sm hidden-xs floating-menu" data-0="opacity: 0;" data-1000="opacity: 1;"></div>-->

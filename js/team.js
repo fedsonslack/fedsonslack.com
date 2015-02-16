@@ -14,7 +14,7 @@ var renderMemberTemplate = function(member_obj) {
     extra_info += '<div class="mark_alt"><i class="fa fa-trophy"></i> Community ' + title + '</div>';
   }
 
-  return '<figure class="team-image-wrapper">' +
+  return '<figure class="team-image-wrapper" data-bottom-top="transform: translateY(100%);" data-bottom="transform: translateY(0%);">' +
           '<img src="' + member_obj.image_192 + '" class="team-image" alt="' + member_obj.real_name + '">' +
           '<figcaption>' +
           '<mark>' + (member_obj.real_name || "&nbsp;") + '</mark><br />' +
@@ -69,8 +69,15 @@ $(document).ready(function() {
       $admins.append(admins_html);
       $members.append(members_html);
 
+			skrollr.init({
+				easing: 'sqrt',
+				smoothScrolling: true,
+				forceHeight: false
+			});
+
       $admins.css("opacity", "1");
       $members.css("opacity", "1");
+      $("#and-more").css("opacity", "1");
     });
 
 	$('#features .col-lg-6 a, #features .col-lg-8 a, a.go-top')
