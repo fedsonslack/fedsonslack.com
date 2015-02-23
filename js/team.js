@@ -14,14 +14,19 @@ var renderMemberTemplate = function(member_obj) {
     extra_info += '<div class="mark_alt"><i class="fa fa-trophy"></i> Community ' + title + '</div>';
   }
 
-  return '<figure class="team-image-wrapper" data-bottom-top="transform: translateY(100%);" data-bottom="transform: translateY(0%);">' +
-          '<img src="' + member_obj.image_192 + '" class="team-image" alt="' + member_obj.real_name + '">' +
-          '<figcaption>' +
-          '<mark>' + (member_obj.real_name || "&nbsp;") + '</mark><br />' +
-          extra_info +
-          '<div class="team-member-title">' + (member_obj.title || "&nbsp;") + '</div>' +
-          '</figcaption>' +
-          '</figure>';
+  var html = '<figure class="team-image-wrapper" data-bottom-top="transform: translateY(100%);" data-bottom="transform: translateY(0%);">' +
+              '<img src="' + member_obj.image_192 + '" class="team-image" alt="' + member_obj.real_name + '">' +
+              '<figcaption>' +
+              '<mark>' + (member_obj.real_name || "&nbsp;") + '</mark><br />' +
+              extra_info +
+              '<div class="team-member-title"></div>' +
+              '</figcaption>' +
+              '</figure>';
+
+  $html = $(html);
+  $html.find('.team-member-title').text((member_obj.title || "&nbsp;"));
+
+  return $html;
 };
 
 $(document).ready(function() {
@@ -43,31 +48,31 @@ $(document).ready(function() {
     .done(function( data ) {
       var $admins = $("#admins");
       var $members = $("#members");
-      var members_html = "";
-      var owners_html = "";
-      var admins_html = "";
+      var members_elements = [];
+      var owners_elements = [];
+      var admins_elements = [];
 
       for (var i = 0; i < data.length; i++) {
         var member_obj = data[i];
 
         if ((member_obj.real_name != "") && (member_obj.title != "") && (member_obj.title != null)) {
           if (!member_obj.is_admin) {
-            members_html += renderMemberTemplate(member_obj);
+            members_elements.push(renderMemberTemplate(member_obj));
           }
 
           if (member_obj.is_owner) {
-            owners_html += renderMemberTemplate(member_obj);
+            owners_elements.push(renderMemberTemplate(member_obj));
           }
 
           if ((!member_obj.is_owner) && (member_obj.is_admin)) {
-            admins_html += renderMemberTemplate(member_obj);
+            admins_elements.push(renderMemberTemplate(member_obj));
           }
         }
       }
 
-      $admins.append(owners_html);
-      $admins.append(admins_html);
-      $members.append(members_html);
+      $admins.append(owners_elements);
+      $admins.append(admins_elements);
+      $members.append(members_elements);
 
 			skrollr.init({
 				easing: 'sqrt',
