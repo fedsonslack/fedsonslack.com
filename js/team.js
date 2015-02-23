@@ -14,7 +14,7 @@ var renderMemberTemplate = function(member_obj) {
     extra_info += '<div class="mark_alt"><i class="fa fa-trophy"></i> Community ' + title + '</div>';
   }
 
-  var html = '<figure class="team-image-wrapper" data-bottom-top="transform: translateY(100%);" data-bottom="transform: translateY(0%);">' +
+  var html = '<figure class="team-image-wrapper">' +
               '<img src="' + member_obj.image_192 + '" class="team-image" alt="' + member_obj.real_name + '">' +
               '<figcaption>' +
               '<mark>' + (member_obj.real_name || "&nbsp;") + '</mark><br />' +
