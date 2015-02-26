@@ -3,6 +3,7 @@ var map;
 var renderMemberTemplate = function(member_obj) {
   var extra_info = "";
   var title = "";
+  var social = "";
 
   if ((member_obj.is_owner) || (member_obj.is_admin)) {
     if (member_obj.is_owner) {
@@ -11,7 +12,11 @@ var renderMemberTemplate = function(member_obj) {
       title = "Admin";
     }
 
-    extra_info += '<div class="mark_alt"><i class="fa fa-trophy"></i> Community ' + title + '</div>';
+    extra_info += '<div '+(member_obj.is_owner ? 'class="mark_alt"' : '')+'><i class="fa fa-trophy"></i> Community ' + title + '</div>';
+  }
+
+  if ((member_obj.twitter) && (member_obj.twitter != "")) {
+    social = '<div class="team-member-social"><a href="https://twitter.com/'+member_obj.twitter+'"><i class="fa fa-twitter"></i> @'+member_obj.twitter+'</a></div>';
   }
 
   var html = '<figure class="team-image-wrapper">' +
@@ -20,6 +25,7 @@ var renderMemberTemplate = function(member_obj) {
               '<mark>' + (member_obj.real_name || "&nbsp;") + '</mark><br />' +
               extra_info +
               '<div class="team-member-title"></div>' +
+              social +
               '</figcaption>' +
               '</figure>';
 
